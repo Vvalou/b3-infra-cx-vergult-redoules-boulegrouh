@@ -24,15 +24,14 @@ def select_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
-    #Ligne modifiée Bilal
-    min_viande : float = 1.5,
-    no_duplicates: bool = False, #ligne de clément pour ajouter une règle fausse de no duplications
+    no_duplicates: bool = False,  # <<< première modif : option anti-doublons
 ) -> List[Dict[str, Any]]:
     """
     Sélection simple et déterministe (via seed) :
     - Filtre par temps.
     - Tire au sort jusqu'à avoir 'days' recettes.
     - Vérifie min_vege et budget moyen (si fourni). Réessaie quelques fois.
+    - Peut éviter les doublons si no_duplicates=True.
     """
     pool = [r for r in recipes if fits_time(r, max_time)]
     if seed is not None:
@@ -40,10 +39,19 @@ def select_menu(
     attempts = 200
     best: List[Dict[str, Any]] = []
     for _ in range(attempts):
-        cand = random.sample(pool, k=min(days, len(pool))) if len(pool) >= days else pool[:]
-        # Si pas assez, on complète en re-piochant (permet petit dataset)
-        while len(cand) < days and pool:
-            cand.append(random.choice(pool))
+        if len(pool) >= days:
+            # Tirage sans remplacement => pas de doublons
+            cand = random.sample(pool, k=days)
+        else:
+            if no_duplicates:
+                # Pas assez de recettes uniques : on prend tout le pool
+                cand = pool[:]
+            else:
+                # Ancien comportement : compléter par tirage avec remplacement
+                cand = pool[:]
+                while len(cand) < days and pool:
+                    cand.append(random.choice(pool))
+
         # Contraintes
         vege_count = sum(1 for r in cand if is_vege(r))
         if vege_count < min_vege:
@@ -52,17 +60,7 @@ def select_menu(
             continue
         best = cand
         break
-        # Contraintes Bilal
-        while len(cand) < days and pool:
-            cand.append(random.choice(pool))
-        
-        viande_count = sum(1 for r in cand if is_viande(r))
-        if viande_count < min_viande:
-            continue
-        if avg_budget is not None and not within_budget_avg(cand, avg_budget, tolerance):
-            continue
-        best = cand
-        break
+
     if not best:
         # Dernier recours: prendre les premiers qui passent le temps
         best = pool[:days] if len(pool) >= days else (pool + pool)[:days]
@@ -91,12 +89,12 @@ def plan_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
-    # Ligne ci-dessous est modifiée
-    min_viande : float = 1.5,
+    no_duplicates: bool = False,  # <<< première modif : passe-plat
 ) -> Dict[str, Any]:
     menu = select_menu(
         recipes, days=days, min_vege=min_vege, max_time=max_time,
-        avg_budget=avg_budget, tolerance=tolerance, seed=seed
+        avg_budget=avg_budget, tolerance=tolerance, seed=seed,
+        no_duplicates=no_duplicates
     )
     shopping = consolidate_shopping_list(menu)
     return {"days": days, "menu": menu, "shopping_list": shopping}
