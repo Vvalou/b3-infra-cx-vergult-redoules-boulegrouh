@@ -24,6 +24,8 @@ def select_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
+    #Ligne modifiée Bilal
+    min_viande : float = 1.5,
 ) -> List[Dict[str, Any]]:
     """
     Sélection simple et déterministe (via seed) :
@@ -44,6 +46,17 @@ def select_menu(
         # Contraintes
         vege_count = sum(1 for r in cand if is_vege(r))
         if vege_count < min_vege:
+            continue
+        if avg_budget is not None and not within_budget_avg(cand, avg_budget, tolerance):
+            continue
+        best = cand
+        break
+        # Contraintes Bilal
+         while len(cand) < days and pool:
+            cand.append(random.choice(pool))
+        
+        viande_count = sum(1 for r in cand if is_viande(r))
+        if viande_count < min_viande:
             continue
         if avg_budget is not None and not within_budget_avg(cand, avg_budget, tolerance):
             continue
@@ -77,6 +90,8 @@ def plan_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
+    # Ligne ci-dessous est modifiée
+    min_viande : float = 1.5,
 ) -> Dict[str, Any]:
     menu = select_menu(
         recipes, days=days, min_vege=min_vege, max_time=max_time,
