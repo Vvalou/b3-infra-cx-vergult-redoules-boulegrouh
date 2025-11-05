@@ -12,7 +12,6 @@ def main():
     p.add_argument("--tolerance", type=float, default=0.2)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--output", default=None, help="Chemin pour sauvegarder le JSON")
-    p.add_argument("--min-viande", type=float, default=1.5) #Ligne Bilal
     p.add_argument("--exclude_ingredients", nargs="+", default=None, help="Liste d'ingrédients à exclure") #Ligne Valentin
     p.add_argument("--no-duplicates", action="store_true",help="Éviter les doublons exacts de recettes dans la semaine") #Ligne Clément
 
@@ -27,7 +26,6 @@ def main():
         avg_budget=args.avg_budget,
         tolerance=args.tolerance,
         seed=args.seed,
-        min_viande=args.min_viande, #Ligne Bilal
         exclude_ingredients=args.exclude_ingredients, #Ligne Valentin
         no_duplicates=args.no_duplicates, #Ligne Clément celle de clement
     )
