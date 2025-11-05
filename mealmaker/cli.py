@@ -29,7 +29,7 @@ def main():
         seed=args.seed,
         min_viande=args.min_viande, #Ligne Bilal
         exclude_ingredients=args.exclude_ingredients, #Ligne Valentin
-        no_duplicates=args.no_duplicates, #Ligne Clément
+        no_duplicates=args.no_duplicates, #Ligne Clément celle de clement
     )
     save_json(result, args.output)
 
