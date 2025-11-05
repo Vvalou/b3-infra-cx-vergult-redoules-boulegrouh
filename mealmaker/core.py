@@ -72,6 +72,8 @@ def select_menu(
             # Comportement historique : compléter par duplication si nécessaire
             best = pool[:days] if len(pool) >= days else (pool + pool)[:days]
 
+            return best
+
 def consolidate_shopping_list(menu: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
     Agrège par (name, unit). Ne gère pas la conversion d’unités (simple au départ).
