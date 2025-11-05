@@ -2,28 +2,34 @@
   "days": 7,
   "menu": [
     {
-      "id": "r19",
-      "name": "Curry de pois chiches",
+      "id": "r11",
+      "name": "Pâtes carbonara",
       "tags": [
-        "vege"
+        "viande",
+        "rapide"
       ],
-      "time_min": 30,
-      "budget_eur": 2.2,
+      "time_min": 20,
+      "budget_eur": 4.0,
       "ingredients": [
         {
-          "name": "pois chiches",
-          "qty": 400,
+          "name": "pâtes",
+          "qty": 200,
           "unit": "g"
         },
         {
-          "name": "tomates concassées",
-          "qty": 300,
+          "name": "oeufs",
+          "qty": 2,
+          "unit": "piece"
+        },
+        {
+          "name": "lardons",
+          "qty": 50,
           "unit": "g"
         },
         {
-          "name": "épices curry",
-          "qty": 1,
-          "unit": "cs"
+          "name": "parmesan",
+          "qty": 30,
+          "unit": "g"
         }
       ]
     },
@@ -78,105 +84,97 @@
       ]
     },
     {
-      "id": "r14",
-      "name": "Pancakes au lait",
+      "id": "r5",
+      "name": "Gratin de pommes de terre au lait",
       "tags": [
-        "vege",
-        "sucré",
-        "rapide"
+        "vege"
       ],
-      "time_min": 20,
-      "budget_eur": 1.7,
+      "time_min": 30,
+      "budget_eur": 3.0,
       "ingredients": [
         {
-          "name": "farine",
-          "qty": 150,
+          "name": "pommes de terre",
+          "qty": 200,
           "unit": "g"
         },
         {
           "name": "lait",
-          "qty": 250,
+          "qty": 100,
           "unit": "ml"
         },
         {
-          "name": "oeufs",
-          "qty": 1,
-          "unit": "piece"
+          "name": "fromage râpé",
+          "qty": 50,
+          "unit": "g"
         }
       ]
     },
     {
-      "id": "r9",
-      "name": "Sauté de boeuf aux oignons",
+      "id": "r7",
+      "name": "Soupe de légumes",
       "tags": [
-        "viande"
+        "vege"
       ],
-      "time_min": 30,
-      "budget_eur": 4.5,
+      "time_min": 15,
+      "budget_eur": 2.5,
       "ingredients": [
         {
-          "name": "boeuf émincé",
-          "qty": 300,
+          "name": "carotte",
+          "qty": 100,
           "unit": "g"
         },
         {
-          "name": "oignons",
-          "qty": 2,
-          "unit": "piece"
+          "name": "pomme de terre",
+          "qty": 100,
+          "unit": "g"
         },
         {
-          "name": "sauce soja",
-          "qty": 2,
+          "name": "oignon",
+          "qty": 50,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": "r6",
+      "name": "Steak grillé",
+      "tags": [
+        "viande",
+        "rapide"
+      ],
+      "time_min": 20,
+      "budget_eur": 6.0,
+      "ingredients": [
+        {
+          "name": "steak",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "huile d'olive",
+          "qty": 1,
           "unit": "cs"
         }
       ]
     },
     {
-      "id": "r17",
-      "name": "Purée de pommes de terre au lait",
+      "id": "r4",
+      "name": "Salade verte",
       "tags": [
         "vege",
-        "accompagnement"
-      ],
-      "time_min": 30,
-      "budget_eur": 1.8,
-      "ingredients": [
-        {
-          "name": "pommes de terre",
-          "qty": 600,
-          "unit": "g"
-        },
-        {
-          "name": "lait",
-          "qty": 300,
-          "unit": "ml"
-        },
-        {
-          "name": "beurre",
-          "qty": 30,
-          "unit": "g"
-        }
-      ]
-    },
-    {
-      "id": "r13",
-      "name": "Salade tomates feta",
-      "tags": [
-        "vege",
-        "rapide",
-        "budget"
+        "rapide"
       ],
       "time_min": 10,
-      "budget_eur": 2.5,
+      "budget_eur": 1.5,
       "ingredients": [
         {
-          "name": "tomates",
-          "qty": 3,
-          "unit": "piece"
+          "name": "salade",
+          "qty": 100,
+          "unit": "g"
         },
         {
-          "name": "feta",
-          "qty": 100,
+          "name": "tomate",
+          "qty": 50,
           "unit": "g"
         },
         {
@@ -194,84 +192,74 @@
       "unit": "gousse"
     },
     {
-      "name": "beurre",
-      "qty": 30.0,
-      "unit": "g"
-    },
-    {
-      "name": "boeuf émincé",
-      "qty": 300.0,
-      "unit": "g"
-    },
-    {
-      "name": "farine",
-      "qty": 150.0,
-      "unit": "g"
-    },
-    {
-      "name": "feta",
+      "name": "carotte",
       "qty": 100.0,
       "unit": "g"
     },
     {
       "name": "fromage râpé",
-      "qty": 30.0,
+      "qty": 80.0,
       "unit": "g"
     },
     {
       "name": "huile d'olive",
-      "qty": 3.0,
+      "qty": 4.0,
       "unit": "cs"
     },
     {
       "name": "lait",
-      "qty": 550.0,
+      "qty": 100.0,
       "unit": "ml"
     },
     {
+      "name": "lardons",
+      "qty": 50.0,
+      "unit": "g"
+    },
+    {
       "name": "oeufs",
-      "qty": 4.0,
+      "qty": 5.0,
       "unit": "piece"
     },
     {
-      "name": "oignons",
-      "qty": 2.0,
-      "unit": "piece"
+      "name": "oignon",
+      "qty": 50.0,
+      "unit": "g"
     },
     {
-      "name": "pois chiches",
-      "qty": 400.0,
+      "name": "parmesan",
+      "qty": 30.0,
+      "unit": "g"
+    },
+    {
+      "name": "pomme de terre",
+      "qty": 100.0,
       "unit": "g"
     },
     {
       "name": "pommes de terre",
-      "qty": 600.0,
-      "unit": "g"
-    },
-    {
-      "name": "pâtes",
       "qty": 200.0,
       "unit": "g"
     },
     {
-      "name": "sauce soja",
-      "qty": 2.0,
-      "unit": "cs"
-    },
-    {
-      "name": "tomates",
-      "qty": 3.0,
-      "unit": "piece"
-    },
-    {
-      "name": "tomates concassées",
-      "qty": 300.0,
+      "name": "pâtes",
+      "qty": 400.0,
       "unit": "g"
     },
     {
-      "name": "épices curry",
-      "qty": 1.0,
-      "unit": "cs"
+      "name": "salade",
+      "qty": 100.0,
+      "unit": "g"
+    },
+    {
+      "name": "steak",
+      "qty": 200.0,
+      "unit": "g"
+    },
+    {
+      "name": "tomate",
+      "qty": 50.0,
+      "unit": "g"
     }
   ]
 }
