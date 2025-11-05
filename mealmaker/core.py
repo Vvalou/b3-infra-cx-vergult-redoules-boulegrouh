@@ -32,6 +32,16 @@ def select_menu(
     - Respecte no_duplicates dans le tirage et le fallback
     """
     pool = [r for r in recipes if fits_time(r, max_time)]
+    if no_duplicates:
+      seen = set()
+    unique = []
+    for r in pool:
+        key = r.get("id") or str(r.get("name", "")).strip().lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(r)
+    pool = unique
 
     if seed is not None:
         random.seed(seed)

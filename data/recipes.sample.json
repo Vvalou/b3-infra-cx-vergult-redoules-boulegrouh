@@ -32,5 +32,205 @@
       {"name": "poulet", "qty": 1, "unit": "kg"},
       {"name": "pommes de terre", "qty": 500, "unit": "g"}
     ]
+  },
+  {
+    "id": "r1",
+    "name": "Pâtes à l'ail et huile d'olive",
+    "tags": ["vege", "rapide", "budget"],
+    "time_min": 15,
+    "budget_eur": 2.0,
+    "ingredients": [
+      {"name": "pâtes", "qty": 200, "unit": "g"},
+      {"name": "ail", "qty": 2, "unit": "gousse"},
+      {"name": "huile d'olive", "qty": 2, "unit": "cs"}
+    ]
+  },
+  {
+    "id": "r2",
+    "name": "Omelette fromage",
+    "tags": ["vege", "rapide"],
+    "time_min": 10,
+    "budget_eur": 1.8,
+    "ingredients": [
+      {"name": "oeufs", "qty": 3, "unit": "piece"},
+      {"name": "fromage râpé", "qty": 30, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r3",
+    "name": "Poulet rôti",
+    "tags": ["viande"],
+    "time_min": 60,
+    "budget_eur": 4.0,
+    "ingredients": [
+      {"name": "poulet", "qty": 1, "unit": "kg"},
+      {"name": "pommes de terre", "qty": 500, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r4",
+    "name": "Gratin de pommes de terre au lait",
+    "tags": ["vege"],
+    "time_min": 30,
+    "budget_eur": 3.0,
+    "ingredients": [
+      {"name": "pommes de terre", "qty": 200, "unit": "g"},
+      {"name": "lait", "qty": 100, "unit": "ml"},
+      {"name": "fromage râpé", "qty": 50, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r4",
+    "name": "Gratin de pommes de terre au lait",
+    "tags": ["vege"],
+    "time_min": 30,
+    "budget_eur": 3.0,
+    "ingredients": [
+      {"name": "pommes de terre", "qty": 200, "unit": "g"},
+      {"name": "lait", "qty": 100, "unit": "ml"},
+      {"name": "fromage râpé", "qty": 50, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r5",
+    "name": "Salade de poulet",
+    "tags": ["viande", "rapide"],
+    "time_min": 15,
+    "budget_eur": 5.0,
+    "ingredients": [
+      {"name": "poulet", "qty": 150, "unit": "g"},
+      {"name": "salade", "qty": 50, "unit": "g"},
+      {"name": "tomate", "qty": 50, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r5",
+    "name": "Salade de poulet",
+    "tags": ["viande", "rapide"],
+    "time_min": 15,
+    "budget_eur": 5.0,
+    "ingredients": [
+      {"name": "poulet", "qty": 150, "unit": "g"},
+      {"name": "salade", "qty": 50, "unit": "g"},
+      {"name": "tomate", "qty": 50, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r6",
+    "name": "Soupe de légumes",
+    "tags": ["vege"],
+    "time_min": 15,
+    "budget_eur": 2.5,
+    "ingredients": [
+      {"name": "carotte", "qty": 100, "unit": "g"},
+      {"name": "pomme de terre", "qty": 100, "unit": "g"},
+      {"name": "oignon", "qty": 50, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r6",
+    "name": "Soupe de légumes",
+    "tags": ["vege"],
+    "time_min": 15,
+    "budget_eur": 2.5,
+    "ingredients": [
+      {"name": "carotte", "qty": 100, "unit": "g"},
+      {"name": "pomme de terre", "qty": 100, "unit": "g"},
+      {"name": "oignon", "qty": 50, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r7",
+    "name": "Poulet curry",
+    "tags": ["viande"],
+    "time_min": 20,
+    "budget_eur": 5.5,
+    "ingredients": [
+      {"name": "poulet", "qty": 200, "unit": "g"},
+      {"name": "curry", "qty": 10, "unit": "g"},
+      {"name": "lait", "qty": 50, "unit": "ml"}
+    ]
+  },
+  {
+    "id": "r7",
+    "name": "Poulet curry",
+    "tags": ["viande"],
+    "time_min": 20,
+    "budget_eur": 5.5,
+    "ingredients": [
+      {"name": "poulet", "qty": 200, "unit": "g"},
+      {"name": "curry", "qty": 10, "unit": "g"},
+      {"name": "lait", "qty": 50, "unit": "ml"}
+    ]
+  },
+  {
+    "id": "r8",
+    "name": "Tarte aux légumes",
+    "tags": ["vege"],
+    "time_min": 25,
+    "budget_eur": 3.5,
+    "ingredients": [
+      {"name": "oeufs", "qty": 2, "unit": "piece"},
+      {"name": "lait", "qty": 100, "unit": "ml"},
+      {"name": "courgette", "qty": 100, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r8",
+    "name": "Tarte aux légumes",
+    "tags": ["vege"],
+    "time_min": 25,
+    "budget_eur": 3.5,
+    "ingredients": [
+      {"name": "oeufs", "qty": 2, "unit": "piece"},
+      {"name": "lait", "qty": 100, "unit": "ml"},
+      {"name": "courgette", "qty": 100, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r9",
+    "name": "Steak grillé",
+    "tags": ["viande", "rapide"],
+    "time_min": 20,
+    "budget_eur": 6.0,
+    "ingredients": [
+      {"name": "steak", "qty": 200, "unit": "g"},
+      {"name": "huile d'olive", "qty": 1, "unit": "cs"}
+    ]
+  },
+  {
+    "id": "r9",
+    "name": "Steak grillé",
+    "tags": ["viande", "rapide"],
+    "time_min": 20,
+    "budget_eur": 6.0,
+    "ingredients": [
+      {"name": "steak", "qty": 200, "unit": "g"},
+      {"name": "huile d'olive", "qty": 1, "unit": "cs"}
+    ]
+  },
+  {
+    "id": "r10",
+    "name": "Ratatouille",
+    "tags": ["vege"],
+    "time_min": 20,
+    "budget_eur": 3.0,
+    "ingredients": [
+      {"name": "aubergine", "qty": 100, "unit": "g"},
+      {"name": "courgette", "qty": 100, "unit": "g"},
+      {"name": "poivron", "qty": 50, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r10",
+    "name": "Ratatouille",
+    "tags": ["vege"],
+    "time_min": 20,
+    "budget_eur": 3.0,
+    "ingredients": [
+      {"name": "aubergine", "qty": 100, "unit": "g"},
+      {"name": "courgette", "qty": 100, "unit": "g"},
+      {"name": "poivron", "qty": 50, "unit": "g"}
+    ]
   }
 ]

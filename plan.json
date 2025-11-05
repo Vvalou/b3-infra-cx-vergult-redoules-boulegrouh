@@ -2,6 +2,111 @@
   "days": 7,
   "menu": [
     {
+      "id": "r5",
+      "name": "Salade de poulet",
+      "tags": [
+        "viande",
+        "rapide"
+      ],
+      "time_min": 15,
+      "budget_eur": 5.0,
+      "ingredients": [
+        {
+          "name": "poulet",
+          "qty": 150,
+          "unit": "g"
+        },
+        {
+          "name": "salade",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "tomate",
+          "qty": 50,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": "r10",
+      "name": "Ratatouille",
+      "tags": [
+        "vege"
+      ],
+      "time_min": 20,
+      "budget_eur": 3.0,
+      "ingredients": [
+        {
+          "name": "aubergine",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "courgette",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "poivron",
+          "qty": 50,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": "r6",
+      "name": "Soupe de légumes",
+      "tags": [
+        "vege"
+      ],
+      "time_min": 15,
+      "budget_eur": 2.5,
+      "ingredients": [
+        {
+          "name": "carotte",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "pomme de terre",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "oignon",
+          "qty": 50,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": "r8",
+      "name": "Tarte aux légumes",
+      "tags": [
+        "vege"
+      ],
+      "time_min": 25,
+      "budget_eur": 3.5,
+      "ingredients": [
+        {
+          "name": "oeufs",
+          "qty": 2,
+          "unit": "piece"
+        },
+        {
+          "name": "lait",
+          "qty": 100,
+          "unit": "ml"
+        },
+        {
+          "name": "courgette",
+          "qty": 100,
+          "unit": "g"
+        }
+      ]
+    },
+    {
       "id": "r1",
       "name": "Pâtes à l'ail et huile d'olive",
       "tags": [
@@ -52,51 +157,27 @@
       ]
     },
     {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
+      "id": "r4",
+      "name": "Gratin de pommes de terre au lait",
       "tags": [
-        "vege",
-        "rapide",
-        "budget"
+        "vege"
       ],
-      "time_min": 15,
-      "budget_eur": 2.0,
+      "time_min": 30,
+      "budget_eur": 3.0,
       "ingredients": [
         {
-          "name": "pâtes",
+          "name": "pommes de terre",
           "qty": 200,
           "unit": "g"
         },
         {
-          "name": "ail",
-          "qty": 2,
-          "unit": "gousse"
-        },
-        {
-          "name": "huile d'olive",
-          "qty": 2,
-          "unit": "cs"
-        }
-      ]
-    },
-    {
-      "id": "r2",
-      "name": "Omelette fromage",
-      "tags": [
-        "vege",
-        "rapide"
-      ],
-      "time_min": 10,
-      "budget_eur": 1.8,
-      "ingredients": [
-        {
-          "name": "oeufs",
-          "qty": 3,
-          "unit": "piece"
+          "name": "lait",
+          "qty": 100,
+          "unit": "ml"
         },
         {
           "name": "fromage râpé",
-          "qty": 30,
+          "qty": 50,
           "unit": "g"
         }
       ]
@@ -105,27 +186,82 @@
   "shopping_list": [
     {
       "name": "ail",
-      "qty": 4.0,
+      "qty": 2.0,
       "unit": "gousse"
     },
     {
+      "name": "aubergine",
+      "qty": 100.0,
+      "unit": "g"
+    },
+    {
+      "name": "carotte",
+      "qty": 100.0,
+      "unit": "g"
+    },
+    {
+      "name": "courgette",
+      "qty": 200.0,
+      "unit": "g"
+    },
+    {
       "name": "fromage râpé",
-      "qty": 60.0,
+      "qty": 80.0,
       "unit": "g"
     },
     {
       "name": "huile d'olive",
-      "qty": 4.0,
+      "qty": 2.0,
       "unit": "cs"
     },
     {
+      "name": "lait",
+      "qty": 200.0,
+      "unit": "ml"
+    },
+    {
       "name": "oeufs",
-      "qty": 6.0,
+      "qty": 5.0,
       "unit": "piece"
     },
     {
+      "name": "oignon",
+      "qty": 50.0,
+      "unit": "g"
+    },
+    {
+      "name": "poivron",
+      "qty": 50.0,
+      "unit": "g"
+    },
+    {
+      "name": "pomme de terre",
+      "qty": 100.0,
+      "unit": "g"
+    },
+    {
+      "name": "pommes de terre",
+      "qty": 200.0,
+      "unit": "g"
+    },
+    {
+      "name": "poulet",
+      "qty": 150.0,
+      "unit": "g"
+    },
+    {
       "name": "pâtes",
-      "qty": 400.0,
+      "qty": 200.0,
+      "unit": "g"
+    },
+    {
+      "name": "salade",
+      "qty": 50.0,
+      "unit": "g"
+    },
+    {
+      "name": "tomate",
+      "qty": 50.0,
       "unit": "g"
     }
   ]
