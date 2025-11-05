@@ -34,6 +34,10 @@ def select_menu(
     - Peut éviter les doublons si no_duplicates=True.
     """
     pool = [r for r in recipes if fits_time(r, max_time)]
+        # 3ᵉ modif : retirer les doublons dans le pool avant sélection
+    if no_duplicates:
+        pool = _deduplicate_pool(pool)
+
     if seed is not None:
         random.seed(seed)
     attempts = 200
