@@ -26,6 +26,7 @@ def select_menu(
     seed: int | None = 42,
     #Ligne modifiée Bilal
     min_viande : float = 1.5,
+    no_duplicates: bool = False, #ligne de clément pour ajouter une règle fausse de no duplications
 ) -> List[Dict[str, Any]]:
     """
     Sélection simple et déterministe (via seed) :
@@ -52,7 +53,7 @@ def select_menu(
         best = cand
         break
         # Contraintes Bilal
-         while len(cand) < days and pool:
+        while len(cand) < days and pool:
             cand.append(random.choice(pool))
         
         viande_count = sum(1 for r in cand if is_viande(r))
