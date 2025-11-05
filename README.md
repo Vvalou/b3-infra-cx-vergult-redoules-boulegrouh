@@ -17,4 +17,4 @@ Objectif: Générer un menu de N jours à partir d'un catalogue de recettes et p
 
 #### Utilisation
 ```bash
-python -m mealmaker.cli --recipes data/recipes.sample.json --days 7 --min-vege 2 --max-time 30 --avg-budget 2.5 --output plan.json
+python -m mealmaker.cli --recipes data/recipes.sample.json --days 7 --min-vege 2 --max-time 30 --avg-budget 2.5 --exclude-ingredients lait oeuf --min-viande 1.5 --output plan.json 
