@@ -16,6 +16,22 @@ def within_budget_avg(selected: List[Dict[str, Any]], avg_target: float, toleran
     cur_avg = sum(float(r.get("budget_eur", 0.0)) for r in selected) / len(selected)
     return (avg_target * (1 - tolerance)) <= cur_avg <= (avg_target * (1 + tolerance))
 
+def fits_exclusions(recipe: Dict[str, Any], exclude_ingredients: List[str]) -> bool:
+    """
+    Vérifie qu'une recette ne contient pas d'ingrédient à exclure.
+    Comparaison en minuscules et tolérante (sous-chaînes).
+    """
+    if not exclude_ingredients:
+        return True
+
+    ingredients = [ing["name"].lower() for ing in recipe.get("ingredients", [])]
+    for excl in exclude_ingredients:
+        excl = excl.lower()
+        if any(excl in ing for ing in ingredients):
+            return False
+    return True
+
+
 def select_menu(
     recipes: List[Dict[str, Any]],
     days: int = 7,
@@ -24,6 +40,7 @@ def select_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
+    exclude_ingredients: List[str] | None = None, #Ligne de Valentin
 ) -> List[Dict[str, Any]]:
     """
     Sélection simple et déterministe (via seed) :
@@ -31,7 +48,7 @@ def select_menu(
     - Tire au sort jusqu'à avoir 'days' recettes.
     - Vérifie min_vege et budget moyen (si fourni). Réessaie quelques fois.
     """
-    pool = [r for r in recipes if fits_time(r, max_time)]
+    pool = [r for r in recipes if fits_time(r, max_time) and fits_exclusions(r, exclude_ingredients or [])]
     if seed is not None:
         random.seed(seed)
     attempts = 200
