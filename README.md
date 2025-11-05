@@ -20,3 +20,5 @@ python -m mealmaker.cli --recipes data/recipes.sample.json --days 7 --min-vege 2
 
 
 python -m mealmaker.cli --recipes data/recipes.sample.json --days 7 --min-vege 2 --max-time 30 --avg-budget 2.5 --exclude-ingredients lait oeuf --output plan.json #Ligne Valentin
+
+python -m mealmaker.cli --recipes data/recipes.sample.json --days 7 --min-vege 2 --max-time 30 --avg-budget 2.5 --min-viande 1.5 --output plan.json #Ligne Bilal
