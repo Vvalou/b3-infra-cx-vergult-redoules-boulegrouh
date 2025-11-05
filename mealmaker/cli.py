@@ -12,7 +12,7 @@ def main():
     p.add_argument("--tolerance", type=float, default=0.2)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--output", default=None, help="Chemin pour sauvegarder le JSON")
-
+    p.add_argument("--no-duplicates", action="store_true",help="Éviter les doublons exacts de recettes dans la semaine") #clément_ajout_fonction
     args = p.parse_args()
 
     recipes = load_recipes(args.recipes)
