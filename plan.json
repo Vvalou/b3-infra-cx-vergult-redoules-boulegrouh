@@ -1,0 +1,132 @@
+{
+  "days": 7,
+  "menu": [
+    {
+      "id": "r1",
+      "name": "Pâtes à l'ail et huile d'olive",
+      "tags": [
+        "vege",
+        "rapide",
+        "budget"
+      ],
+      "time_min": 15,
+      "budget_eur": 2.0,
+      "ingredients": [
+        {
+          "name": "pâtes",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "ail",
+          "qty": 2,
+          "unit": "gousse"
+        },
+        {
+          "name": "huile d'olive",
+          "qty": 2,
+          "unit": "cs"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "name": "Omelette fromage",
+      "tags": [
+        "vege",
+        "rapide"
+      ],
+      "time_min": 10,
+      "budget_eur": 1.8,
+      "ingredients": [
+        {
+          "name": "oeufs",
+          "qty": 3,
+          "unit": "piece"
+        },
+        {
+          "name": "fromage râpé",
+          "qty": 30,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": "r1",
+      "name": "Pâtes à l'ail et huile d'olive",
+      "tags": [
+        "vege",
+        "rapide",
+        "budget"
+      ],
+      "time_min": 15,
+      "budget_eur": 2.0,
+      "ingredients": [
+        {
+          "name": "pâtes",
+          "qty": 200,
+          "unit": "g"
+        },
+        {
+          "name": "ail",
+          "qty": 2,
+          "unit": "gousse"
+        },
+        {
+          "name": "huile d'olive",
+          "qty": 2,
+          "unit": "cs"
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "name": "Omelette fromage",
+      "tags": [
+        "vege",
+        "rapide"
+      ],
+      "time_min": 10,
+      "budget_eur": 1.8,
+      "ingredients": [
+        {
+          "name": "oeufs",
+          "qty": 3,
+          "unit": "piece"
+        },
+        {
+          "name": "fromage râpé",
+          "qty": 30,
+          "unit": "g"
+        }
+      ]
+    }
+  ],
+  "shopping_list": [
+    {
+      "name": "ail",
+      "qty": 4.0,
+      "unit": "gousse"
+    },
+    {
+      "name": "fromage râpé",
+      "qty": 60.0,
+      "unit": "g"
+    },
+    {
+      "name": "huile d'olive",
+      "qty": 4.0,
+      "unit": "cs"
+    },
+    {
+      "name": "oeufs",
+      "qty": 6.0,
+      "unit": "piece"
+    },
+    {
+      "name": "pâtes",
+      "qty": 400.0,
+      "unit": "g"
+    }
+  ]
+}
