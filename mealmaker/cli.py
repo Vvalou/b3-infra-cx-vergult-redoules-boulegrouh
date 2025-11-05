@@ -13,7 +13,10 @@ def main():
     p.add_argument("--tolerance", type=float, default=0.2)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--output", default=None, help="Chemin pour sauvegarder le JSON")
-    p.add_argument("--exclude-ingredients", nargs="+", default=[], help="Liste d'ingrédients à exclure") # Ligne Valentin
+
+    # Options supplémentaires
+    p.add_argument("--exclude-ingredients", nargs="+", default=[], help="Liste d'ingrédients à exclure")  # Allergènes
+    p.add_argument("--no-duplicates", action="store_true", help="Éviter les doublons exacts de recettes dans la semaine")  # Anti-doublons
     p.add_argument("--min-viande", type=float, default=None,
                    help="Minimum de plats viande (arrondi à l’entier supérieur si décimal).")
     p.add_argument("--max-viande", type=float, default=None,
@@ -33,9 +36,10 @@ def main():
         avg_budget=args.avg_budget,
         tolerance=args.tolerance,
         seed=args.seed,
+        exclude_ingredients=args.exclude_ingredients,  # Allergènes
+        no_duplicates=args.no_duplicates,              # Anti-doublons
         min_viande=args.min_viande,
         max_viande=args.max_viande,
-        exclude_ingredients=args.exclude_ingredients,  # <-- Important pour gérer les allergènes
     )
     save_json(result, args.output)
 

@@ -1,6 +1,5 @@
 from typing import Any, Dict, List, Tuple, Optional
 import random
-import math
 
 # --- Helpers ---
 def normalize(name: str) -> str:
@@ -47,16 +46,24 @@ def select_menu(
     exclude_ingredients: Optional[List[str]] = None,
     min_viande: Optional[int] = None,
     max_viande: Optional[int] = None,
+    no_duplicates: bool = False,
 ) -> List[Dict[str, Any]]:
-    """Sélectionne un menu en respectant les contraintes et exclusions."""
+    """Sélectionne un menu en respectant toutes les contraintes."""
     if seed is not None:
         random.seed(seed)
 
     # Filtre initial
-    pool = [
-        r for r in recipes
-        if fits_time(r, max_time) and fits_exclusions(r, exclude_ingredients)
-    ]
+    pool = [r for r in recipes if fits_time(r, max_time) and fits_exclusions(r, exclude_ingredients)]
+
+    if no_duplicates:
+        seen = set()
+        unique = []
+        for r in pool:
+            key = r.get("id") or str(r.get("name", "")).strip().lower()
+            if key not in seen:
+                seen.add(key)
+                unique.append(r)
+        pool = unique
 
     if not pool:
         return []
@@ -64,13 +71,9 @@ def select_menu(
     attempts = 200
     for _ in range(attempts):
         cand = random.sample(pool, k=min(days, len(pool)))
+        while len(cand) < days:
+            cand.append(random.choice(pool))
 
-        # Complète si dataset trop petit
-        while len(cand) < days and pool:
-            extra = random.choice(pool)
-            cand.append(extra)
-
-        # Contraintes
         vege_count = sum(1 for r in cand if is_vege(r))
         viande_count = sum(1 for r in cand if is_viande(r))
 
@@ -83,10 +86,17 @@ def select_menu(
         if avg_budget is not None and not within_budget_avg(cand, avg_budget, tolerance):
             continue
 
-        return cand  # Menu valide trouvé
+        return cand
 
-    # Fallback si aucun tirage ne satisfait toutes les contraintes
-    return pool[:days] if len(pool) >= days else (pool + pool)[:days]
+    # Fallback raisonnable
+    fallback = pool[:days] if len(pool) >= days else (pool + pool)[:days]
+
+    # Vérifie fallback avec min/max viande
+    if min_viande or max_viande:
+        fallback = [r for r in fallback if (min_viande is None or sum(is_viande(r2) for r2 in fallback) >= min_viande) 
+                                    and (max_viande is None or sum(is_viande(r2) for r2 in fallback) <= max_viande)]
+
+    return fallback
 
 def consolidate_shopping_list(menu: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Agrège les ingrédients par nom et unité."""
@@ -108,6 +118,7 @@ def plan_menu(
     exclude_ingredients: Optional[List[str]] = None,
     min_viande: Optional[int] = None,
     max_viande: Optional[int] = None,
+    no_duplicates: bool = False,
 ) -> Dict[str, Any]:
     menu = select_menu(
         recipes=recipes,
@@ -120,6 +131,7 @@ def plan_menu(
         exclude_ingredients=exclude_ingredients,
         min_viande=min_viande,
         max_viande=max_viande,
+        no_duplicates=no_duplicates,
     )
     shopping = consolidate_shopping_list(menu)
     return {"days": days, "menu": menu, "shopping_list": shopping}
