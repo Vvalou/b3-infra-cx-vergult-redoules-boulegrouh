@@ -1,6 +1,11 @@
 from typing import Any, Dict, List, Tuple
 import random
 
+# --- Helpers ---
+def normalize(name: str) -> str:
+    """Met en minuscules et supprime un 's' final simple pour gérer pluriels."""
+    return name.lower().strip().rstrip("s")
+
 def is_vege(recipe: Dict[str, Any]) -> bool:
     return "tags" in recipe and any(t.lower() == "vege" for t in recipe["tags"])
 
@@ -18,18 +23,20 @@ def within_budget_avg(selected: List[Dict[str, Any]], avg_target: float, toleran
 def fits_exclusions(recipe: Dict[str, Any], exclude_ingredients: List[str]) -> bool: #Ligne Valentin
     """
     Vérifie qu'une recette ne contient pas d'ingrédient à exclure.
-    Comparaison en minuscules et tolérante (sous-chaînes).
+    Recherche par sous-chaîne pour gérer pluriels et variations simples.
     """
     if not exclude_ingredients:
         return True
 
-    ingredients = [ing["name"].lower() for ing in recipe.get("ingredients", [])]
+    ingredients = [normalize(ing["name"]) for ing in recipe.get("ingredients", [])]
     for excl in exclude_ingredients:
-        excl = excl.lower()
-        if any(excl in ing for ing in ingredients):
+        excl = normalize(excl)
+        # Vérifie si l'exclu est contenu dans un ingrédient ou inversement
+        if any(excl in ing or ing in excl for ing in ingredients):
             return False
     return True
 
+# --- Core functions ---
 def select_menu(
     recipes: List[Dict[str, Any]],
     days: int = 7,
@@ -38,15 +45,18 @@ def select_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
-    exclude_ingredients: List[str] | None = None,  #Ligne Valentin
+    exclude_ingredients: List[str] | None = None, #Ligne Valentin
 ) -> List[Dict[str, Any]]:
     """
     Sélection simple et déterministe (via seed) :
     - Filtre par temps et ingrédients exclus.
     - Tire au sort jusqu'à avoir 'days' recettes.
-    - Vérifie min_vege et budget moyen (si fourni). Réessaie quelques fois.
+    - Vérifie min_vege et budget moyen (si fourni).
     """
-    pool = [
+
+    print("DEBUG - Exclude ingredients:", exclude_ingredients) #Ligne Valentin
+
+    pool = [ #Ligne Valentin
         r for r in recipes
         if fits_time(r, max_time) and fits_exclusions(r, exclude_ingredients or [])
     ]
@@ -100,7 +110,7 @@ def plan_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
-    exclude_ingredients: List[str] | None = None,  #Ligne Valentin
+    exclude_ingredients: List[str] | None = None, #Ligne Valentin
 ) -> Dict[str, Any]:
     menu = select_menu(
         recipes,
@@ -110,7 +120,7 @@ def plan_menu(
         avg_budget=avg_budget,
         tolerance=tolerance,
         seed=seed,
-        exclude_ingredients=exclude_ingredients,  #Ligne Valentin
+        exclude_ingredients=exclude_ingredients, #Ligne Valentin
     )
     shopping = consolidate_shopping_list(menu)
     return {"days": days, "menu": menu, "shopping_list": shopping}
