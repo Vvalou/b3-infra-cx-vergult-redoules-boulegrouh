@@ -1,0 +1,8 @@
+[
+  "tests/test_cli.py::test_cli_smoke",
+  "tests/test_core.py::test_consolidate_shopping_list",
+  "tests/test_core.py::test_fits_time",
+  "tests/test_core.py::test_is_vege",
+  "tests/test_core.py::test_select_menu_constraints",
+  "tests/test_core.py::test_within_budget_avg"
+]

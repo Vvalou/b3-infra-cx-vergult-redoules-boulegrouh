@@ -13,7 +13,6 @@ Objectif: Générer un menu de N jours à partir d'un catalogue de recettes et p
         --exclude-ingredients: exclure certains ingrédients (allergènes).
         --no-duplicates: éviter les doublons exacts de recettes dans la semaine.
         Contrainte sur budget total hebdo --max-weekly-budget.
-- Héberger le code sur votre repository : b3-infra-cx-nom-nom-nom
 
 #### Utilisation
 ```bash
