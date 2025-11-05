@@ -1,5 +1,4 @@
 from typing import Any, Dict, List, Tuple
-import math
 import random
 
 def is_vege(recipe: Dict[str, Any]) -> bool:
@@ -24,59 +23,58 @@ def select_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
-    no_duplicates: bool = False,  # <<< première modif : option anti-doublons
+    no_duplicates: bool = False,  # option anti-doublons
 ) -> List[Dict[str, Any]]:
     """
-    Sélection simple et déterministe (via seed) :
-    - Filtre par temps.
-    - Tire au sort jusqu'à avoir 'days' recettes.
-    - Vérifie min_vege et budget moyen (si fourni). Réessaie quelques fois.
-    - Peut éviter les doublons si no_duplicates=True.
+    - Filtre par temps
+    - Tire 'days' recettes (sans remplacement si possible)
+    - Vérifie min_vege et budget moyen (si fourni)
+    - Respecte no_duplicates dans le tirage et le fallback
     """
     pool = [r for r in recipes if fits_time(r, max_time)]
 
     if seed is not None:
         random.seed(seed)
+
     attempts = 200
     best: List[Dict[str, Any]] = []
+
     for _ in range(attempts):
         if len(pool) >= days:
-            # Tirage sans remplacement => pas de doublons
+            # sans remplacement => pas de doublons
             cand = random.sample(pool, k=days)
         else:
             if no_duplicates:
-                # Pas assez de recettes uniques : on prend tout le pool
+                # pas assez d'uniques : on prend tout le pool (peut être < days)
                 cand = pool[:]
             else:
-                # Ancien comportement : compléter par tirage avec remplacement
+                # compléter en autorisant les doublons
                 cand = pool[:]
                 while len(cand) < days and pool:
                     cand.append(random.choice(pool))
 
-        # Contraintes
+        # contraintes
         vege_count = sum(1 for r in cand if is_vege(r))
         if vege_count < min_vege:
             continue
         if avg_budget is not None and not within_budget_avg(cand, avg_budget, tolerance):
             continue
+
         best = cand
         break
 
     if not best:
-        # Dernier recours: prendre les premiers qui passent le temps
-        # Fallback (2ᵉ modif) : respecter no_duplicates
+        # Fallback qui respecte no_duplicates
         if no_duplicates:
-            # On renvoie au mieux des recettes uniques (peut être < days s'il n'y en a pas assez)
             best = pool[:days] if len(pool) >= days else pool[:]
         else:
-            # Comportement historique : compléter par duplication si nécessaire
             best = pool[:days] if len(pool) >= days else (pool + pool)[:days]
 
-            return best
+    return best   # ← IMPORTANT : on retourne toujours une liste
 
 def consolidate_shopping_list(menu: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Agrège par (name, unit). Ne gère pas la conversion d’unités (simple au départ).
+    Agrège par (name, unit). Ne gère pas la conversion d’unités.
     """
     agg: Dict[Tuple[str, str], float] = {}
     for r in menu:
@@ -97,7 +95,7 @@ def plan_menu(
     avg_budget: float | None = None,
     tolerance: float = 0.2,
     seed: int | None = 42,
-    no_duplicates: bool = False,  # <<< première modif : passe-plat
+    no_duplicates: bool = False,  # passe-plat
 ) -> Dict[str, Any]:
     menu = select_menu(
         recipes, days=days, min_vege=min_vege, max_time=max_time,
