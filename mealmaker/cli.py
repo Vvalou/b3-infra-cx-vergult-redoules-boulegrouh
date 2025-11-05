@@ -12,8 +12,8 @@ def main():
     p.add_argument("--tolerance", type=float, default=0.2)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--output", default=None, help="Chemin pour sauvegarder le JSON")
-#Ligne ci-dessous est modifiée
-    p.add_argument("--min-viande", type=float, default=1.5)
+    p.add_argument("--min-viande", type=float, default=1.5) #Ligne Bilal
+    p.add_argument("--exclude_ingredients", nargs="+", default=None, help="Liste d'ingrédients à exclure") #Ligne Valentin
 
     args = p.parse_args()
 
@@ -26,8 +26,8 @@ def main():
         avg_budget=args.avg_budget,
         tolerance=args.tolerance,
         seed=args.seed,
-    #Ligne ci-dessous est modifiée
-        min_viande=args.min_viande,
+        min_viande=args.min_viande, #Ligne Bilal
+        exclude_ingredients=args.exclude_ingredients, #Ligne Valentin
     )
     save_json(result, args.output)
 
