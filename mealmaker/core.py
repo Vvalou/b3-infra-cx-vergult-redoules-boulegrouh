@@ -63,6 +63,13 @@ def select_menu(
 
     if not best:
         # Dernier recours: prendre les premiers qui passent le temps
+        # Fallback (2ᵉ modif) : respecter no_duplicates
+        if no_duplicates:
+            # On renvoie au mieux des recettes uniques (peut être < days s'il n'y en a pas assez)
+            best = pool[:days] if len(pool) >= days else pool[:]
+        else:
+            # Comportement historique : compléter par duplication si nécessaire
+            best = pool[:days] if len(pool) >= days else (pool + pool)[:days]
         best = pool[:days] if len(pool) >= days else (pool + pool)[:days]
     return best
 
