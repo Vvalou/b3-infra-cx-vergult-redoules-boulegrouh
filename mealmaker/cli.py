@@ -14,6 +14,7 @@ def main():
     p.add_argument("--output", default=None, help="Chemin pour sauvegarder le JSON")
     p.add_argument("--min-viande", type=float, default=1.5) #Ligne Bilal
     p.add_argument("--exclude_ingredients", nargs="+", default=None, help="Liste d'ingrédients à exclure") #Ligne Valentin
+    p.add_argument("--no-duplicates", action="store_true",help="Éviter les doublons exacts de recettes dans la semaine") #Ligne Clément
 
     args = p.parse_args()
 
@@ -28,6 +29,7 @@ def main():
         seed=args.seed,
         min_viande=args.min_viande, #Ligne Bilal
         exclude_ingredients=args.exclude_ingredients, #Ligne Valentin
+        no_duplicates=args.no_duplicates, #Ligne Clément
     )
     save_json(result, args.output)
 
