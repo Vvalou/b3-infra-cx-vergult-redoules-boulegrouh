@@ -2,43 +2,88 @@
   "days": 7,
   "menu": [
     {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
+      "id": "r2",
+      "name": "Omelette fromage",
       "tags": [
         "vege",
-        "rapide",
-        "budget"
+        "rapide"
       ],
-      "time_min": 15,
-      "budget_eur": 2.0,
+      "time_min": 10,
+      "budget_eur": 1.8,
       "ingredients": [
         {
-          "name": "pâtes",
+          "name": "oeufs",
+          "qty": 3,
+          "unit": "piece"
+        },
+        {
+          "name": "fromage râpé",
+          "qty": 30,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": "r7",
+      "name": "Soupe de légumes",
+      "tags": [
+        "vege"
+      ],
+      "time_min": 15,
+      "budget_eur": 2.5,
+      "ingredients": [
+        {
+          "name": "carotte",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "pomme de terre",
+          "qty": 100,
+          "unit": "g"
+        },
+        {
+          "name": "oignon",
+          "qty": 50,
+          "unit": "g"
+        }
+      ]
+    },
+    {
+      "id": "r10",
+      "name": "Poisson au four",
+      "tags": [
+        "rapide"
+      ],
+      "time_min": 25,
+      "budget_eur": 5.0,
+      "ingredients": [
+        {
+          "name": "filet de poisson",
           "qty": 200,
           "unit": "g"
         },
         {
-          "name": "ail",
-          "qty": 2,
-          "unit": "gousse"
+          "name": "citron",
+          "qty": 1,
+          "unit": "piece"
         },
         {
           "name": "huile d'olive",
-          "qty": 2,
+          "qty": 1,
           "unit": "cs"
         }
       ]
     },
     {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
+      "id": "r11",
+      "name": "Pâtes carbonara",
       "tags": [
-        "vege",
-        "rapide",
-        "budget"
+        "viande",
+        "rapide"
       ],
-      "time_min": 15,
-      "budget_eur": 2.0,
+      "time_min": 20,
+      "budget_eur": 4.0,
       "ingredients": [
         {
           "name": "pâtes",
@@ -46,173 +91,173 @@
           "unit": "g"
         },
         {
-          "name": "ail",
+          "name": "oeufs",
           "qty": 2,
-          "unit": "gousse"
+          "unit": "piece"
         },
         {
-          "name": "huile d'olive",
-          "qty": 2,
-          "unit": "cs"
+          "name": "lardons",
+          "qty": 50,
+          "unit": "g"
+        },
+        {
+          "name": "parmesan",
+          "qty": 30,
+          "unit": "g"
         }
       ]
     },
     {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
+      "id": "r15",
+      "name": "Soupe à l'oignon",
       "tags": [
         "vege",
-        "rapide",
-        "budget"
+        "rapide"
       ],
       "time_min": 15,
-      "budget_eur": 2.0,
+      "budget_eur": 2.5,
       "ingredients": [
         {
-          "name": "pâtes",
-          "qty": 200,
+          "name": "oignon",
+          "qty": 100,
           "unit": "g"
         },
         {
-          "name": "ail",
-          "qty": 2,
-          "unit": "gousse"
+          "name": "beurre",
+          "qty": 20,
+          "unit": "g"
         },
         {
-          "name": "huile d'olive",
-          "qty": 2,
-          "unit": "cs"
+          "name": "bouillon",
+          "qty": 200,
+          "unit": "ml"
         }
       ]
     },
     {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
+      "id": "r16",
+      "name": "Boeuf bourguignon",
       "tags": [
-        "vege",
-        "rapide",
-        "budget"
+        "viande"
       ],
-      "time_min": 15,
-      "budget_eur": 2.0,
+      "time_min": 30,
+      "budget_eur": 6.5,
       "ingredients": [
         {
-          "name": "pâtes",
-          "qty": 200,
+          "name": "boeuf",
+          "qty": 250,
           "unit": "g"
         },
         {
-          "name": "ail",
-          "qty": 2,
-          "unit": "gousse"
+          "name": "vin rouge",
+          "qty": 50,
+          "unit": "ml"
         },
         {
-          "name": "huile d'olive",
-          "qty": 2,
-          "unit": "cs"
+          "name": "carotte",
+          "qty": 50,
+          "unit": "g"
         }
       ]
     },
     {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
+      "id": "r2",
+      "name": "Omelette fromage",
       "tags": [
         "vege",
-        "rapide",
-        "budget"
+        "rapide"
       ],
-      "time_min": 15,
-      "budget_eur": 2.0,
+      "time_min": 10,
+      "budget_eur": 1.8,
       "ingredients": [
         {
-          "name": "pâtes",
-          "qty": 200,
+          "name": "oeufs",
+          "qty": 3,
+          "unit": "piece"
+        },
+        {
+          "name": "fromage râpé",
+          "qty": 30,
           "unit": "g"
-        },
-        {
-          "name": "ail",
-          "qty": 2,
-          "unit": "gousse"
-        },
-        {
-          "name": "huile d'olive",
-          "qty": 2,
-          "unit": "cs"
-        }
-      ]
-    },
-    {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
-      "tags": [
-        "vege",
-        "rapide",
-        "budget"
-      ],
-      "time_min": 15,
-      "budget_eur": 2.0,
-      "ingredients": [
-        {
-          "name": "pâtes",
-          "qty": 200,
-          "unit": "g"
-        },
-        {
-          "name": "ail",
-          "qty": 2,
-          "unit": "gousse"
-        },
-        {
-          "name": "huile d'olive",
-          "qty": 2,
-          "unit": "cs"
-        }
-      ]
-    },
-    {
-      "id": "r1",
-      "name": "Pâtes à l'ail et huile d'olive",
-      "tags": [
-        "vege",
-        "rapide",
-        "budget"
-      ],
-      "time_min": 15,
-      "budget_eur": 2.0,
-      "ingredients": [
-        {
-          "name": "pâtes",
-          "qty": 200,
-          "unit": "g"
-        },
-        {
-          "name": "ail",
-          "qty": 2,
-          "unit": "gousse"
-        },
-        {
-          "name": "huile d'olive",
-          "qty": 2,
-          "unit": "cs"
         }
       ]
     }
   ],
   "shopping_list": [
     {
-      "name": "ail",
-      "qty": 14.0,
-      "unit": "gousse"
+      "name": "beurre",
+      "qty": 20.0,
+      "unit": "g"
+    },
+    {
+      "name": "boeuf",
+      "qty": 250.0,
+      "unit": "g"
+    },
+    {
+      "name": "bouillon",
+      "qty": 200.0,
+      "unit": "ml"
+    },
+    {
+      "name": "carotte",
+      "qty": 150.0,
+      "unit": "g"
+    },
+    {
+      "name": "citron",
+      "qty": 1.0,
+      "unit": "piece"
+    },
+    {
+      "name": "filet de poisson",
+      "qty": 200.0,
+      "unit": "g"
+    },
+    {
+      "name": "fromage râpé",
+      "qty": 60.0,
+      "unit": "g"
     },
     {
       "name": "huile d'olive",
-      "qty": 14.0,
+      "qty": 1.0,
       "unit": "cs"
     },
     {
-      "name": "pâtes",
-      "qty": 1400.0,
+      "name": "lardons",
+      "qty": 50.0,
       "unit": "g"
+    },
+    {
+      "name": "oeufs",
+      "qty": 8.0,
+      "unit": "piece"
+    },
+    {
+      "name": "oignon",
+      "qty": 150.0,
+      "unit": "g"
+    },
+    {
+      "name": "parmesan",
+      "qty": 30.0,
+      "unit": "g"
+    },
+    {
+      "name": "pomme de terre",
+      "qty": 100.0,
+      "unit": "g"
+    },
+    {
+      "name": "pâtes",
+      "qty": 200.0,
+      "unit": "g"
+    },
+    {
+      "name": "vin rouge",
+      "qty": 50.0,
+      "unit": "ml"
     }
   ]
 }
