@@ -25,12 +25,215 @@
   {
     "id": "r3",
     "name": "Poulet rôti",
-    "tags": ["viande"],
+    "tags": ["viande", "famille"],
     "time_min": 60,
     "budget_eur": 4.0,
     "ingredients": [
       {"name": "poulet", "qty": 1, "unit": "kg"},
       {"name": "pommes de terre", "qty": 500, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r4",
+    "name": "Gratin dauphinois",
+    "tags": ["vege", "four"],
+    "time_min": 75,
+    "budget_eur": 3.5,
+    "ingredients": [
+      {"name": "pommes de terre", "qty": 800, "unit": "g"},
+      {"name": "lait", "qty": 500, "unit": "ml"},
+      {"name": "crème", "qty": 100, "unit": "ml"}
+    ]
+  },
+  {
+    "id": "r5",
+    "name": "Steak haché et haricots verts",
+    "tags": ["viande", "rapide"],
+    "time_min": 20,
+    "budget_eur": 3.2,
+    "ingredients": [
+      {"name": "steak haché", "qty": 150, "unit": "g"},
+      {"name": "haricots verts", "qty": 200, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r6",
+    "name": "Chili con carne",
+    "tags": ["viande"],
+    "time_min": 45,
+    "budget_eur": 3.8,
+    "ingredients": [
+      {"name": "boeuf haché", "qty": 300, "unit": "g"},
+      {"name": "haricots rouges", "qty": 400, "unit": "g"},
+      {"name": "tomates concassées", "qty": 400, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r7",
+    "name": "Soupe de légumes",
+    "tags": ["vege", "budget"],
+    "time_min": 35,
+    "budget_eur": 1.9,
+    "ingredients": [
+      {"name": "carottes", "qty": 300, "unit": "g"},
+      {"name": "poireaux", "qty": 200, "unit": "g"},
+      {"name": "pommes de terre", "qty": 200, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r8",
+    "name": "Riz au lait",
+    "tags": ["vege", "sucré"],
+    "time_min": 35,
+    "budget_eur": 1.6,
+    "ingredients": [
+      {"name": "riz rond", "qty": 120, "unit": "g"},
+      {"name": "lait", "qty": 800, "unit": "ml"},
+      {"name": "sucre", "qty": 40, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r9",
+    "name": "Sauté de boeuf aux oignons",
+    "tags": ["viande"],
+    "time_min": 30,
+    "budget_eur": 4.5,
+    "ingredients": [
+      {"name": "boeuf émincé", "qty": 300, "unit": "g"},
+      {"name": "oignons", "qty": 2, "unit": "piece"},
+      {"name": "sauce soja", "qty": 2, "unit": "cs"}
+    ]
+  },
+  {
+    "id": "r10",
+    "name": "Pâtes carbonara (version simple)",
+    "tags": ["viande", "rapide"],
+    "time_min": 20,
+    "budget_eur": 2.8,
+    "ingredients": [
+      {"name": "pâtes", "qty": 200, "unit": "g"},
+      {"name": "lardons", "qty": 100, "unit": "g"},
+      {"name": "oeufs", "qty": 2, "unit": "piece"}
+    ]
+  },
+  {
+    "id": "r11",
+    "name": "Lasagnes végétariennes à la béchamel",
+    "tags": ["vege", "four"],
+    "time_min": 60,
+    "budget_eur": 4.2,
+    "ingredients": [
+      {"name": "feuilles de lasagne", "qty": 9, "unit": "piece"},
+      {"name": "lait", "qty": 500, "unit": "ml"},
+      {"name": "légumes variés", "qty": 400, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r12",
+    "name": "Poulet au curry et riz",
+    "tags": ["viande"],
+    "time_min": 35,
+    "budget_eur": 3.9,
+    "ingredients": [
+      {"name": "poulet", "qty": 300, "unit": "g"},
+      {"name": "riz", "qty": 200, "unit": "g"},
+      {"name": "lait", "qty": 150, "unit": "ml"}
+    ]
+  },
+  {
+    "id": "r13",
+    "name": "Salade tomates feta",
+    "tags": ["vege", "rapide", "budget"],
+    "time_min": 10,
+    "budget_eur": 2.5,
+    "ingredients": [
+      {"name": "tomates", "qty": 3, "unit": "piece"},
+      {"name": "feta", "qty": 100, "unit": "g"},
+      {"name": "huile d'olive", "qty": 1, "unit": "cs"}
+    ]
+  },
+  {
+    "id": "r14",
+    "name": "Pancakes au lait",
+    "tags": ["vege", "sucré", "rapide"],
+    "time_min": 20,
+    "budget_eur": 1.7,
+    "ingredients": [
+      {"name": "farine", "qty": 150, "unit": "g"},
+      {"name": "lait", "qty": 250, "unit": "ml"},
+      {"name": "oeufs", "qty": 1, "unit": "piece"}
+    ]
+  },
+  {
+    "id": "r15",
+    "name": "Croque-monsieur maison",
+    "tags": ["viande", "rapide"],
+    "time_min": 15,
+    "budget_eur": 2.6,
+    "ingredients": [
+      {"name": "pain de mie", "qty": 4, "unit": "tranche"},
+      {"name": "jambon", "qty": 2, "unit": "tranche"},
+      {"name": "lait", "qty": 100, "unit": "ml"}
+    ]
+  },
+  {
+    "id": "r16",
+    "name": "Tacos boeuf",
+    "tags": ["viande"],
+    "time_min": 25,
+    "budget_eur": 3.4,
+    "ingredients": [
+      {"name": "boeuf haché", "qty": 250, "unit": "g"},
+      {"name": "tortillas", "qty": 4, "unit": "piece"},
+      {"name": "tomates", "qty": 1, "unit": "piece"}
+    ]
+  },
+  {
+    "id": "r17",
+    "name": "Purée de pommes de terre au lait",
+    "tags": ["vege", "accompagnement"],
+    "time_min": 30,
+    "budget_eur": 1.8,
+    "ingredients": [
+      {"name": "pommes de terre", "qty": 600, "unit": "g"},
+      {"name": "lait", "qty": 300, "unit": "ml"},
+      {"name": "beurre", "qty": 30, "unit": "g"}
+    ]
+  },
+  {
+    "id": "r18",
+    "name": "Quiche lorraine",
+    "tags": ["viande", "four"],
+    "time_min": 50,
+    "budget_eur": 4.1,
+    "ingredients": [
+      {"name": "pâte brisée", "qty": 1, "unit": "rouleau"},
+      {"name": "lardons", "qty": 150, "unit": "g"},
+      {"name": "lait", "qty": 200, "unit": "ml"}
+    ]
+  },
+  {
+    "id": "r19",
+    "name": "Curry de pois chiches",
+    "tags": ["vege"],
+    "time_min": 30,
+    "budget_eur": 2.2,
+    "ingredients": [
+      {"name": "pois chiches", "qty": 400, "unit": "g"},
+      {"name": "tomates concassées", "qty": 300, "unit": "g"},
+      {"name": "épices curry", "qty": 1, "unit": "cs"}
+    ]
+  },
+  {
+    "id": "r20",
+    "name": "Burger maison",
+    "tags": ["viande", "famille"],
+    "time_min": 30,
+    "budget_eur": 4.6,
+    "ingredients": [
+      {"name": "steak haché", "qty": 150, "unit": "g"},
+      {"name": "pain à burger", "qty": 1, "unit": "piece"},
+      {"name": "fromage", "qty": 1, "unit": "tranche"}
     ]
   }
 ]
